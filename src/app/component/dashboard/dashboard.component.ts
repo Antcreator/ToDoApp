@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/model/task';
 import { CrudService } from 'src/app/service/crud.service';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -31,15 +31,9 @@ export class DashboardComponent implements OnInit {
   }
 
   getAllTask(): void {
-    this.crudService.getAllTask().subscribe({
-     next:  (task: Task[]) => {
-        return task;
-      },
-      error: (err: any) => {
-        err;
-      },
-    }
-    );
+    this.crudService.getAllTask().subscribe((data) => {
+      this.taskArr = data;
+    });
   }
 
   addTask() {
@@ -58,19 +52,15 @@ export class DashboardComponent implements OnInit {
 
   editTask() {
     this.taskObj.task_name = this.editTaskValue;
-    this.crudService.editTask(this.taskObj).subscribe(res => {
+    this.crudService.editTask(this.taskObj).subscribe((_data) => {
       this.ngOnInit();
-    }, err=> {
-      alert("Failed to update task");
     })
   }
 
   deleteTask(ptask: Task) {
-    this.crudService.deleteTask(ptask).subscribe(res => {
+    this.crudService.deleteTask(ptask).subscribe((_data) => {
       this.ngOnInit();
-    }, err => {
-      alert("Unable to delete task!")
-    });
+    })
   }
 
   call(ptask : Task) {
