@@ -6,7 +6,31 @@
     },
     {
       "id": 2,
-      "task_name": "We shall go home"
+      "task_name": "Go to work"
+    },
+    {
+      "id": 3,
+      "task_name": "Eat lunch"
+    },
+    {
+      "id": 4,
+      "task_name": "Pray"
+    },
+    {
+      "id": 5,
+      "task_name": "Play game"
+    },
+    {
+      "id": 6,
+      "task_name": "Head home"
+    },
+    {
+      "id": 7,
+      "task_name": "Dance with the family"
+    },
+    {
+      "id": 8,
+      "task_name": "Eat dinner"
     }
   ]
 }
